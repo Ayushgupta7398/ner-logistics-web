@@ -1,22 +1,52 @@
-import {Navkink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 function AdminSidebar() {
-    return(
-        <aside>
-            <h2>NER Admin</h2>
-            <nav>
-                <Navkink to = "/admin">Dashboard</Navkink>
-                <Navkink to = "/admin/LiveMonitoring">Live Monitoring</Navkink>
-                <Navkink to ="/admin/TrafficAnalytics">Traffic Analytics</Navkink>
-                <Navkink to = "/admin/RiskMonitoring">Risk Monitoring</Navkink>
-                <Navkink to = "/admin/Accessibility">Accessibility</Navkink>
-                <Navkink to = "/admin/AlertManagement">Alert Management</Navkink>
-                <Navkink to = "/admin/Reports">Reports</Navkink>
+  return (
+    <aside className="admin-sidebar">
 
-            </nav>
+      <div className="sidebar-logo">
+        <h2>NER Admin</h2>
+        <span>Logistics Intelligence</span>
+      </div>
 
-        </aside>
+      <nav className="sidebar-nav">
 
-    );
+        <NavLink to="/admin">
+          Dashboard
+        </NavLink>
+
+        <NavLink to="/admin/live-monitoring">
+          Live Monitoring
+        </NavLink>
+
+        <NavLink to="/admin/traffic">
+          Traffic Analytics
+        </NavLink>
+
+        <NavLink to="/admin/risk">
+          Risk Monitoring
+        </NavLink>
+
+        <NavLink to="/admin/accessibility">
+          Accessibility
+        </NavLink>
+
+        <NavLink to="/admin/alerts">
+          Alert Management
+        </NavLink>
+
+        <NavLink to="/admin/reports">
+          Reports
+        </NavLink>
+
+      </nav>
+
+      <div className="sidebar-footer">
+        <span>Admin Panel</span>
+      </div>
+
+    </aside>
+  );
 }
 
 export default AdminSidebar;
