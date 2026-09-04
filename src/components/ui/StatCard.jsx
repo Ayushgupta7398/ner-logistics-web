@@ -1,8 +1,28 @@
-function StatCard({ title, value }) {
+function StatCard({
+  title,
+  value,
+  trend,
+  trendType = "positive",
+}) {
   return (
     <div className="stat-card">
-      <span>{title}</span>
-      <strong>{value}</strong>
+
+      <div className="stat-card-header">
+        <span className="stat-indicator"></span>
+
+        <span className="stat-title">
+          {title}
+        </span>
+      </div>
+
+      <strong className="stat-value">
+        {value}
+      </strong>
+
+      <span className={`stat-trend ${trendType}`}>
+        {trend}
+      </span>
+
     </div>
   );
 }

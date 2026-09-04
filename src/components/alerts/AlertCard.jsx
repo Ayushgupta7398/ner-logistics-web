@@ -7,28 +7,45 @@ function AlertCard({
   createdAt,
 }) {
   return (
-    <div className="alert-card">
+    <div className={`alert-card alert-${severity.toLowerCase()}`}>
 
-      <div className="alert-card-top">
-        <span className={`alert-severity ${severity}`}>
-          {severity}
-        </span>
-
-        <span className="alert-type">
-          {type}
-        </span>
+      <div className="alert-card-icon">
+        !
       </div>
 
-      <h3>{title}</h3>
+      <div className="alert-card-content">
 
-      <p>{message}</p>
+        <div className="alert-card-header">
 
-      <div className="alert-action">
-        <strong>Recommended Action:</strong>
-        <span>{recommendedAction}</span>
+          <div>
+            <h3>{title}</h3>
+
+            <span className="alert-type">
+              {type}
+            </span>
+          </div>
+
+          <span className="alert-severity">
+            {severity}
+          </span>
+
+        </div>
+
+        <p>{message}</p>
+
+        <div className="alert-card-footer">
+
+          <span>
+            {createdAt}
+          </span>
+
+          <span className="alert-action-text">
+            {recommendedAction}
+          </span>
+
+        </div>
+
       </div>
-
-      <small>{createdAt}</small>
 
     </div>
   );

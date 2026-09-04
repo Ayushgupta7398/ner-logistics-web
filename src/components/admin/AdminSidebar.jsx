@@ -4,10 +4,15 @@ function AdminSidebar() {
   return (
     <aside className="admin-sidebar">
 
+      {/* sidebar brand */}
+
       <div className="sidebar-logo">
-        <h2>NER Admin</h2>
+        <h2>NER PLATFORM</h2>
         <span>Logistics Intelligence</span>
       </div>
+
+
+      {/* admin navigation*/}
 
       <nav className="sidebar-nav">
 
@@ -39,10 +44,18 @@ function AdminSidebar() {
           Reports
         </NavLink>
 
+        <NavLink to="/admin/settings">
+          Settings
+        </NavLink>
+
       </nav>
 
+
+      {/* sidebar footer*/}
+
       <div className="sidebar-footer">
-        <span>Admin Panel</span>
+        <span>◉</span>
+        <span>User Mode</span>
       </div>
 
     </aside>
