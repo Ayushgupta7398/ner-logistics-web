@@ -20,7 +20,7 @@ function App() {
           <Route index element={<Dashboard />} />
 
           <Route
-            path="liveMonitoring"
+            path="live-monitoring"
             element={<LiveMonitoring />}
           />
 

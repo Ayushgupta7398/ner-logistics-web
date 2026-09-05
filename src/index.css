@@ -1032,3 +1032,50 @@ select {
     flex-direction: column;
   }
 }
+
+
+
+
+
+
+
+/* 2nd page  */
+/* =========================================================
+   LIVE MONITORING - STATS VARIANT
+========================================================= */
+
+.live-stats {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   MAP LEGEND
+========================================================= */
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 10px 15px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}

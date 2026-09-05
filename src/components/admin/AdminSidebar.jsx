@@ -16,7 +16,7 @@ function AdminSidebar() {
 
       <nav className="sidebar-nav">
 
-        <NavLink to="/admin">
+        <NavLink to="/admin" end>
           Dashboard
         </NavLink>
 
