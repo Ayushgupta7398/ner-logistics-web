@@ -123,7 +123,7 @@ function TrafficAnalytics() {
                   <td>{r.avgSpeed}</td>
                   <td>{r.delay}</td>
                   <td>
-                    <span className={`congestion-badge ${r.congestionLevel}`}>
+                    <span className={`level-badge ${r.congestionLevel}`}>
                       {r.congestionLevel.charAt(0).toUpperCase() + r.congestionLevel.slice(1)}
                     </span>
                   </td>

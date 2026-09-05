@@ -1189,7 +1189,7 @@ select {
   border-bottom: none;
 }
 
-.congestion-badge {
+.level-badge {
   display: inline-block;
 
   padding: 3px 10px;
@@ -1200,17 +1200,68 @@ select {
   font-weight: 600;
 }
 
-.congestion-badge.high {
+.level-badge.high {
   background-color: #fee2e2;
   color: #b91c1c;
 }
 
-.congestion-badge.moderate {
+.level-badge.moderate {
   background-color: #fef3c7;
   color: #b45309;
 }
 
-.congestion-badge.low {
+.level-badge.low {
   background-color: #dcfce7;
   color: #15803d;
+}
+
+
+
+/* =========================================================
+   RISK FACTORS PANEL
+========================================================= */
+
+.risk-factors-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.risk-factor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 17px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.risk-factor-row:last-child {
+  border-bottom: none;
+}
+
+.risk-factor-name {
+  color: #0b1a2b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLE ACTION LINK
+========================================================= */
+
+.table-action-link {
+  border: none;
+  background: none;
+
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.table-action-link:hover {
+  text-decoration: underline;
 }
