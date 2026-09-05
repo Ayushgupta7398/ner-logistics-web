@@ -1149,7 +1149,7 @@ select {
 
   border-radius: 4px;
 
-  background: linear-gradient(to right, #16a34a, #f59e0b, #ef4444);
+
 }
 
 
@@ -1264,4 +1264,88 @@ select {
 
 .table-action-link:hover {
   text-decoration: underline;
+}
+
+
+
+
+
+/* =========================================================
+   BADGE ALIASES (Good/Poor status labels)
+   Same colors as high/low, different semantic name so
+   className reads correctly wherever it's used.
+========================================================= */
+
+.level-badge.good {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.level-badge.poor {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+
+/* =========================================================
+   REGION SCORE LIST
+========================================================= */
+
+.region-score-list {
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 17px;
+}
+
+.region-score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.region-score-row:last-child {
+  border-bottom: none;
+}
+
+.region-score-name {
+  width: 120px;
+  flex-shrink: 0;
+
+  color: #0b1a2b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.region-score-track {
+  flex: 1;
+
+  height: 8px;
+
+  background-color: #f1f5f9;
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+.region-score-fill {
+  height: 100%;
+
+  background-color: #16a34a;
+  border-radius: 4px;
+}
+
+.region-score-value {
+  width: 30px;
+  flex-shrink: 0;
+
+  text-align: right;
+
+  color: #0b1a2b;
+  font-size: 13px;
+  font-weight: 600;
 }
