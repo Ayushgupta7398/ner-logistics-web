@@ -305,7 +305,7 @@ select {
 
   color: #0b1a2b;
 
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -326,7 +326,7 @@ select {
   grid-template-columns:
     repeat(5, minmax(0, 1fr));
 
-  gap: 11px;
+  gap: 12px;
 
   margin-bottom: 20px;
 }
