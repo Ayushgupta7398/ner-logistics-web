@@ -1,57 +1,31 @@
 import { NavLink } from "react-router-dom";
 
-function AdminSidebar() {
-  return (
-    <aside className="admin-sidebar">
+const navItems = [
+  { to: "/admin", label: "Dashboard", end: true },
+  { to: "/admin/live-monitoring", label: "Live Monitoring" },
+  { to: "/admin/traffic", label: "Traffic Analytics" },
+  { to: "/admin/risk", label: "Risk Monitoring" },
+  { to: "/admin/accessibility", label: "Accessibility" },
+  { to: "/admin/alerts", label: "Alert Management" },
+  { to: "/admin/reports", label: "Reports" },
+];
 
-      {/* sidebar brand */}
+function AdminSidebar({ collapsed }) {
+  return (
+    <aside className={`admin-sidebar ${collapsed ? "collapsed" : ""}`}>
 
       <div className="sidebar-logo">
         <h2>NER PLATFORM</h2>
         <span>Logistics Intelligence</span>
       </div>
 
-
-      {/* admin navigation*/}
-
       <nav className="sidebar-nav">
-
-        <NavLink to="/admin" end>
-          Dashboard
-        </NavLink>
-
-        <NavLink to="/admin/live-monitoring">
-          Live Monitoring
-        </NavLink>
-
-        <NavLink to="/admin/traffic">
-          Traffic Analytics
-        </NavLink>
-
-        <NavLink to="/admin/risk">
-          Risk Monitoring
-        </NavLink>
-
-        <NavLink to="/admin/accessibility">
-          Accessibility
-        </NavLink>
-
-        <NavLink to="/admin/alerts">
-          Alert Management
-        </NavLink>
-
-        <NavLink to="/admin/reports">
-          Reports
-        </NavLink>
-
-        <NavLink to="/admin/settings">
-          Settings
-        </NavLink>
-
+        {navItems.map((item) => (
+          <NavLink key={item.to} to={item.to} end={item.end}>
+            {item.label}
+          </NavLink>
+        ))}
       </nav>
-
-
-      {/* sidebar footer*/}
 
       <div className="sidebar-footer">
         <span>◉</span>

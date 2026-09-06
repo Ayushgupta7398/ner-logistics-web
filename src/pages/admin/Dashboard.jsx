@@ -2,7 +2,7 @@ import AlertCard from "../../components/alerts/AlertCard";
 import MapView from "../../components/maps/MapView";
 import StatCard from "../../components/ui/StatCard";
 import TripOverview from "../../components/admin/TripOverview";
-import DashboardAnalytics from "../../components/admin/DashboardAnalytics";
+import DashboardTrendChart from "../../components/charts/DashboardTrendChart";
 
 import LoadingState from "../../components/ui/LoadingState";
 import EmptyState from "../../components/ui/EmptyState";
@@ -28,39 +28,15 @@ import EmptyState from "../../components/ui/EmptyState";
 //     "systemHealth": "+2%"
 //   }
 // }
-const stats = [
-  {
-    title: "Total Vehicles",
-    value: "428",
-    trend: "↑ 8% vs yesterday",
-    trendType: "positive",
-  },
-  {
-    title: "Active Trips",
-    value: "1,240",
-    trend: "↑ 6% vs yesterday",
-    trendType: "positive",
-  },
-  {
-    title: "Critical Alerts",
-    value: "18",
-    trend: "↓ 5% vs yesterday",
-    trendType: "negative",
-  },
-  {
-    title: "Risk Zones",
-    value: "24",
-    trend: "↑ 6% vs yesterday",
-    trendType: "positive",
-  },
-  {
-    title: "System Health",
-    value: "98%",
-    trend: "↑ 2% vs yesterday",
-    trendType: "positive",
-  },
-];
-
+ const stats = [
+   { title: "Active Vehicles", value: "428", trend: "↑ 8% vs yesterday", trendType: "positive" },
+  { title: "Active Trips", value: "1,240", trend: "↑ 6% vs yesterday", trendType: "positive" },
+   { title: "Active Alerts", value: "18", trend: "↓ 5% vs yesterday", trendType: "negative" },
+   { title: "High-Risk Areas", value: "24", trend: "↑ 6% vs yesterday", trendType: "negative" },
+   { title: "Average ETA", value: "46 min", trend: "↓ 4% vs yesterday", trendType: "positive" },
+   { title: "Average Delivery Time", value: "3.2 hrs", trend: "↓ 2% vs yesterday", trendType: "positive" },
+   { title: "Accessibility Index", value: "7.8 /10", trend: "↑ 0.6 vs last month", trendType: "positive" },
+  ];
 
 
 // TODO: BACKEND/API INTEGRATION
@@ -88,7 +64,7 @@ const alerts = [
   {
     type: "Landslide",
     severity: "High",
-    title: "Landslide Risk Detected",
+    title: "Landslide Risk Detected - NH-6",
     message: "High-risk condition reported in the monitored region.",
     recommendedAction: "Review affected route and infrastructure.",
     createdAt: "Recently",
@@ -96,7 +72,7 @@ const alerts = [
   {
     type: "Landslide",
     severity: "High",
-    title: "Landslide Risk Detected",
+    title: "Landslide Risk Detected - Cachar",
     message: "High-risk condition reported in the monitored region.",
     recommendedAction: "Review affected route and infrastructure.",
     createdAt: "Recently",
@@ -104,7 +80,7 @@ const alerts = [
   {
     type: "Landslide",
     severity: "High",
-    title: "Landslide Risk Detected",
+    title: "Landslide Risk Detected - Jaintia Hills",
     message: "High-risk condition reported in the monitored region.",
     recommendedAction: "Review affected route and infrastructure.",
     createdAt: "Recently",
@@ -125,7 +101,7 @@ function Dashboard() {
       </div>
 
       {/* Statistics */}
-      <section className="dashboard-stats">
+      <section className="dashboard-stats kpi-stats-grid">
         {stats.map((stat)=> (
         <StatCard 
             key={stat.title}
@@ -199,7 +175,15 @@ function Dashboard() {
         <TripOverview />
       </div>  
       </section>
-      <DashboardAnalytics />
+      <div className="dashboard-card">
+       <div className="card-header">
+         <h2>Active Trips Trend</h2>
+       </div>
+      <div className="chart-card-body">
+         <DashboardTrendChart />
+       </div>
+     </div>
+
 
     </div>
   );

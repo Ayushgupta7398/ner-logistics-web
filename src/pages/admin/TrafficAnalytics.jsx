@@ -9,6 +9,7 @@ import TrafficDistributionChart from "../../components/charts/TrafficDistributio
 // Demo API example:
 // GET /api/admin/traffic/stats?range=7d&region=all
 const stats = [
+  { title: "Traffic Volume", value: "12,450", trend: "↑ 4%", trendType: "positive" },
   { title: "Avg Speed", value: "42 km/h", trend: "↑ 6%", trendType: "positive" },
   { title: "Congested Routes", value: "28", trend: "↑ 6%", trendType: "negative" },
   { title: "Total Incidents", value: "156", trend: "↓ 3%", trendType: "positive" },
@@ -67,7 +68,7 @@ function TrafficAnalytics() {
       </div>
 
       {/* Statistics */}
-      <section className="dashboard-stats live-stats">
+      <section className="dashboard-stats">
         {stats.map((stat) => (
           <StatCard
             key={stat.title}

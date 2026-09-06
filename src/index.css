@@ -45,6 +45,12 @@ select {
 
   background-color: #0f1b2d;
   color: #ffffff;
+
+  transition: transform 0.25s ease;
+}
+
+.admin-sidebar.collapsed {
+  transform: translateX(-100%);
 }
 
 .sidebar-logo {
@@ -81,6 +87,9 @@ select {
 
 .sidebar-nav a {
   padding: 11px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   border-radius: 7px;
 
@@ -131,6 +140,53 @@ select {
 
   margin-left: 220px;
   padding: 26px;
+
+  transition: margin-left 0.25s ease;
+}
+
+.admin-main.sidebar-collapsed {
+  margin-left: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR EDGE TOGGLE
+========================================================= */
+
+.sidebar-edge-toggle {
+  position: fixed;
+  top: 26px;
+  left: 220px;
+  transform: translateX(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  color: #334155;
+  font-size: 14px;
+
+  cursor: pointer;
+  z-index: 50;
+
+  transition: left 0.25s ease;
+}
+
+.sidebar-edge-toggle:hover {
+  border-color: #0336a4;
+  color: #2563eb;
+}
+
+.sidebar-edge-toggle.collapsed {
+  left: 12px;
 }
 
 
@@ -261,7 +317,7 @@ select {
 
 
 /* =========================================================
-   DASHBOARD STATISTICS
+   DASHBOARD STATISTICS (base, 5-column default)
 ========================================================= */
 
 .dashboard-stats {
@@ -340,6 +396,24 @@ select {
 
 .stat-trend.negative {
   color: #ef4444;
+}
+
+
+/* =========================================================
+   STATS GRID VARIANTS
+   Combined selectors (.dashboard-stats.live-stats) so they
+   always win over the responsive breakpoints below,
+   regardless of source order (specificity-based, not
+   order-based — more reliable).
+========================================================= */
+
+.dashboard-stats.live-stats {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-stats.kpi-stats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 
@@ -774,99 +848,6 @@ select {
 
 
 /* =========================================================
-   DASHBOARD ANALYTICS
-   FULL WIDTH BELOW MAIN GRID
-========================================================= */
-
-.dashboard-analytics {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
-  gap: 15px;
-
-  margin-top: 18px;
-}
-
-.analytics-card {
-  min-height: 96px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  padding: 14px 16px;
-
-  background-color: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 9px;
-}
-
-.analytics-card-header {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-}
-
-.analytics-title {
-  color: #64748b;
-
-  font-size: 18px;
-}
-
-.analytics-indicator {
-  font-size: 14px;
-}
-
-.analytics-indicator.normal {
-  color: #2563eb;
-}
-
-.analytics-indicator.good {
-  color: #16a34a;
-}
-
-.analytics-indicator.warning {
-  color: #f59e0b;
-}
-
-.analytics-value {
-  color: #0b1a2b;
-
-  font-size: 20px;
-
-  font-weight: 600;
-}
-
-.analytics-value.normal {
-  color: #2563eb;
-}
-
-.analytics-value.good {
-  color: #16a34a;
-}
-
-.analytics-value.warning {
-  color: #f59e0b;
-}
-
-.analytics-trend {
-  color: #94a3b8;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
    LOADING STATE
 ========================================================= */
 
@@ -943,115 +924,7 @@ select {
 
 
 /* =========================================================
-   RESPONSIVE - TABLET
-========================================================= */
-
-@media (max-width: 1200px) {
-
-  .dashboard-stats {
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-side {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE - SMALL TABLET
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .dashboard-side {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-analytics {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .admin-sidebar {
-    position: static;
-
-    width: 100%;
-    height: auto;
-  }
-
-  .admin-main {
-    margin-left: 0;
-
-    padding: 20px;
-  }
-
-  .admin-header {
-    height: auto;
-
-    min-height: 62px;
-
-    gap: 12px;
-  }
-
-  .header-search {
-    flex: 1;
-  }
-
-  .header-search input {
-    width: 100%;
-  }
-
-  .dashboard-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-side {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-analytics {
-    grid-template-columns: 1fr;
-  }
-
-  .trip-legend {
-    flex-direction: column;
-  }
-}
-
-
-
-
-
-
-
-/* 2nd page  */
-/* =========================================================
-   LIVE MONITORING - STATS VARIANT
-========================================================= */
-
-.live-stats {
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-}
-
-
-/* =========================================================
-   MAP LEGEND
+   LIVE MONITORING - MAP LEGEND
 ========================================================= */
 
 .map-legend {
@@ -1081,12 +954,8 @@ select {
 }
 
 
-
-
-
-
 /* =========================================================
-   TRAFFIC ANALYTICS - PAGE TOOLBAR (filters)
+   PAGE TOOLBAR (filters)
 ========================================================= */
 
 .page-toolbar {
@@ -1111,7 +980,10 @@ select {
   cursor: pointer;
 }
 
-/* TRAFFIC ANALYTICS - CONTENT GRID */
+
+/* =========================================================
+   TRAFFIC / RISK / ACCESSIBILITY - CONTENT GRID
+========================================================= */
 
 .traffic-content-grid {
   display: grid;
@@ -1148,13 +1020,12 @@ select {
   height: 8px;
 
   border-radius: 4px;
-
-
+  /* background set inline via MapView's scaleDirection prop */
 }
 
 
 /* =========================================================
-   CONGESTION TABLE
+   DATA TABLE (Traffic / Risk / Alerts / Reports)
 ========================================================= */
 
 .data-table {
@@ -1215,6 +1086,20 @@ select {
   color: #15803d;
 }
 
+.level-badge.critical {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.level-badge.good {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.level-badge.poor {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
 
 
 /* =========================================================
@@ -1267,23 +1152,22 @@ select {
 }
 
 
-
-
-
 /* =========================================================
-   BADGE ALIASES (Good/Poor status labels)
-   Same colors as high/low, different semantic name so
-   className reads correctly wherever it's used.
+   TABLE EDIT ACTION
 ========================================================= */
 
-.level-badge.good {
-  background-color: #dcfce7;
-  color: #15803d;
+.table-edit-btn {
+  border: none;
+  background: none;
+
+  color: #64748b;
+  font-size: 16px;
+
+  cursor: pointer;
 }
 
-.level-badge.poor {
-  background-color: #fee2e2;
-  color: #b91c1c;
+.table-edit-btn:hover {
+  color: #2563eb;
 }
 
 
@@ -1351,16 +1235,8 @@ select {
 }
 
 
-
-
-
-
-
-
-
-
 /* =========================================================
-   ALERT TABS
+   PAGE TABS (Alerts / Reports)
 ========================================================= */
 
 .page-tabs {
@@ -1396,7 +1272,7 @@ select {
   font-weight: 600;
 }
 
-.tabbed-content-card  {
+.tabbed-content-card {
   border-radius: 0 0 9px 9px;
 }
 
@@ -1426,35 +1302,6 @@ select {
 .status-badge.resolved {
   background-color: #e2e8f0;
   color: #475569;
-}
-
-
-/* =========================================================
-   SEVERITY BADGE - CRITICAL ALIAS
-========================================================= */
-
-.level-badge.critical {
-  background-color: #fee2e2;
-  color: #b91c1c;
-}
-
-
-/* =========================================================
-   TABLE EDIT ACTION
-========================================================= */
-
-.table-edit-btn {
-  border: none;
-  background: none;
-
-  color: #64748b;
-  font-size: 16px;
-
-  cursor: pointer;
-}
-
-.table-edit-btn:hover {
-  color: #2563eb;
 }
 
 
@@ -1628,10 +1475,6 @@ select {
 }
 
 
-
-
-
-
 /* =========================================================
    QUICK REPORTS GRID
 ========================================================= */
@@ -1709,4 +1552,87 @@ select {
 .recent-reports-toolbar {
   display: flex;
   gap: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-side {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .dashboard-side {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-sidebar {
+    position: static;
+
+    width: 100%;
+    height: auto;
+  }
+
+  .admin-main {
+    margin-left: 0;
+
+    padding: 20px;
+  }
+
+  .admin-header {
+    height: auto;
+
+    min-height: 62px;
+
+    gap: 12px;
+  }
+
+  .header-search {
+    flex: 1;
+  }
+
+  .header-search input {
+    width: 100%;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-side {
+    grid-template-columns: 1fr;
+  }
+
+  .trip-legend {
+    flex-direction: column;
+  }
 }
