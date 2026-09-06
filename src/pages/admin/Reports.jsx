@@ -13,6 +13,7 @@ const quickReports = [
   { title: "Alert Report", description: "Alerts summary and statistics", frequency: "Daily / Weekly", category: "alerts", actionLabel: "Generate" },
   { title: "Fleet Report", description: "Fleet performance and statistics", frequency: "Daily / Weekly", category: "operational", actionLabel: "Generate" },
   { title: "Route Performance", description: "Route efficiency and delay analysis", frequency: "Weekly / Monthly", category: "operational", actionLabel: "Generate" },
+  { title: "Demand Report", description: "Logistics demand forecast and usage trends", frequency: "Weekly / Monthly", category: "operational", actionLabel: "Generate" }, 
   { title: "Custom Report", description: "Build and download custom reports", frequency: "Custom", category: "custom", actionLabel: "Custom" },
 ];
 
