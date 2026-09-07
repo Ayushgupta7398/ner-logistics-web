@@ -1,7 +1,5 @@
 import { useState } from "react";
 import StatCard from "../../components/ui/StatCard";
-import Modal from "../../components/ui/Modal";
-import CreateAlertForm from "../../components/alerts/CreateAlertForm";
 
 // TODO: BACKEND/API INTEGRATION
 // Replace demo stats with backend response.
@@ -27,9 +25,8 @@ const stats = [
 // The "status" field below (active/scheduled/resolved) is a UI-only
 // demo convenience. The current Alert contract only defines a boolean
 // "resolved" field. Please confirm whether a proper status enum
-// (e.g. active/scheduled/resolved) will be added, or whether the
-// frontend should derive "Active"/"Resolved" purely from the
-// boolean instead.
+// will be added, or whether the frontend should derive
+// "Active"/"Resolved" purely from the boolean instead.
 const initialAlerts = [
   { title: "Landslide Risk Detected", type: "landslide", severity: "high", location: "NH-6, East Khasi Hills", status: "active", time: "10 min ago" },
   { title: "Heavy Rain Alert", type: "weather", severity: "high", location: "West Jaintia Hills", status: "active", time: "25 min ago" },
@@ -44,36 +41,20 @@ const initialAlerts = [
 const TABS = ["all", "critical", "high", "moderate", "low"];
 
 function AlertManagement() {
-  const [alerts, setAlerts] = useState(initialAlerts);
   const [activeTab, setActiveTab] = useState("all");
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredAlerts =
     activeTab === "all"
-      ? alerts
-      : alerts.filter((a) => a.severity === activeTab);
-
-  function handleCreateAlert(newAlert) {
-    // TODO: BACKEND/API INTEGRATION
-    // On success response, re-fetch or append the server-returned
-    // alert (with real id/createdAt) instead of the raw form data.
-    setAlerts([newAlert, ...alerts]);
-    setIsModalOpen(false);
-  }
+      ? initialAlerts
+      : initialAlerts.filter((a) => a.severity === activeTab);
 
   return (
     <div className="admin-dashboard">
 
-      <div className="dashboard-header" style={{ display: "flex", alignItems: "flex-start" }}>
+      <div className="dashboard-header">
         <div>
           <h1>Alert Management</h1>
-          <p>Create, monitor & distribute regional alerts</p>
-        </div>
-
-        <div className="page-toolbar">
-          <button className="btn-primary" onClick={() => setIsModalOpen(true)}>
-            + Create Alert
-          </button>
+          <p>Monitor & distribute regional alerts</p>
         </div>
       </div>
 
@@ -127,8 +108,9 @@ function AlertManagement() {
                 <td>{a.time}</td>
                 <td>
                   {/* TODO: BACKEND/API INTEGRATION
-                      Will open an edit form (PATCH /api/admin/alerts/:id)
-                      once that contract is finalized. */}
+                      Will open an edit/view form (PATCH /api/admin/alerts/:id)
+                      once that contract is finalized. Matches PRD's
+                      "view/update/resolve/publish" actions. */}
                   <button className="table-edit-btn">✏️</button>
                 </td>
               </tr>
@@ -136,28 +118,6 @@ function AlertManagement() {
           </tbody>
         </table>
       </div>
-
-      <div className="dashboard-card" style={{ marginTop: "18px" }}>
-        <div className="card-header">
-          <h2>Alert Channels</h2>
-        </div>
-        <div className="alert-channels-grid">
-          <div className="channel-card"><span className="channel-icon">📱</span>In-App</div>
-          <div className="channel-card"><span className="channel-icon">💬</span>SMS</div>
-          <div className="channel-card"><span className="channel-icon">✉️</span>Email</div>
-          <div className="channel-card"><span className="channel-icon">🔔</span>Push Notification</div>
-          <div className="channel-card"><span className="channel-icon">📞</span>WhatsApp</div>
-        </div>
-      </div>
-
-      {isModalOpen && (
-        <Modal title="Create New Alert" onClose={() => setIsModalOpen(false)}>
-          <CreateAlertForm
-            onSubmit={handleCreateAlert}
-            onCancel={() => setIsModalOpen(false)}
-          />
-        </Modal>
-      )}
 
     </div>
   );
