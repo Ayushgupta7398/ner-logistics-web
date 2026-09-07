@@ -14,11 +14,6 @@ function AdminSidebar({ collapsed }) {
   return (
     <aside className={`admin-sidebar ${collapsed ? "collapsed" : ""}`}>
 
-      <div className="sidebar-logo">
-        <h2>NER PLATFORM</h2>
-        <span>Logistics Intelligence</span>
-      </div>
-
       <nav className="sidebar-nav">
         {navItems.map((item) => (
           <NavLink key={item.to} to={item.to} end={item.end}>
@@ -27,10 +22,7 @@ function AdminSidebar({ collapsed }) {
         ))}
       </nav>
 
-      <div className="sidebar-footer">
-        <span>◉</span>
-        <span>User / Field Officer</span>
-      </div>
+      
 
     </aside>
   );

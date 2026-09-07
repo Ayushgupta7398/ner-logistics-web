@@ -44,7 +44,7 @@ select {
   padding: 24px 14px;
 
   /* sidebar color  */
-  background-color: #0f1b2d;
+  background-color: #072755;
   color: #ffffff;
 
   transition: transform 0.25s ease;
@@ -54,25 +54,57 @@ select {
   transform: translateX(-100%);
 }
 
-.sidebar-logo {
-  padding: 0 10px 26px;
-
-  border-bottom: 1px solid #26344a;
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 22px;
+  margin-top: 40x;
 }
 
-.sidebar-logo h2 {
-  margin-bottom: 6px;
+/* =========================================================
+   HEADER BRAND (logo + sidebar toggle)
+========================================================= */
 
-  font-size: 21px;
-  font-weight: 600;
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.sidebar-logo span {
-  color: #9aa8bd;
+.sidebar-toggle-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background-color: #ffffff;
+
+  color: #334155;
+  cursor: pointer;
+}
+
+.sidebar-toggle-inline:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.header-logo h2 {
+  color: #0b1a2b;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header-logo span {
+  color: #64748b;
   font-size: 16px;
 }
-
+    
 
 /* =========================================================
    SIDEBAR NAVIGATION
@@ -81,9 +113,9 @@ select {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
 
-  margin-top: 22px;
+  margin-top: 25px;
 }
 
 .sidebar-nav a {
@@ -96,7 +128,7 @@ select {
 
   color: #b8c3d4;
 
-  font-size: 17px;
+  font-size: 18px;
 
   transition: 0.2s ease;
 }
@@ -121,6 +153,8 @@ select {
   align-items: center;
   gap: 8px;
 
+  
+
   margin-top: auto;
   padding: 14px 10px;
 
@@ -128,7 +162,7 @@ select {
 
   color: #7f8da3;
 
-  font-size: 17px;
+  font-size: 18px;
 }
 
 
@@ -226,7 +260,7 @@ select {
 
   color: #334155;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .header-search input:focus {

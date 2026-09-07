@@ -11,21 +11,8 @@ function AdminLayout() {
 
       <AdminSidebar collapsed={collapsed} />
 
-      <button
-        className={`sidebar-edge-toggle ${collapsed ? "collapsed" : ""}`}
-        onClick={() => setCollapsed(!collapsed)}
-        title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect y="3" width="16" height="2" rx="1" fill="currentColor" />
-          <rect y="7" width="16" height="2" rx="1" fill="currentColor" />
-          <rect y="11" width="16" height="2" rx="1" fill="currentColor" />
-
-        </svg>
-      </button>
-
       <main className={`admin-main ${collapsed ? "sidebar-collapsed" : ""}`}>
-        <AdminHeader />
+        <AdminHeader onToggleSidebar={() => setCollapsed(!collapsed)} />
         <Outlet />
       </main>
 
