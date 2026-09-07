@@ -1,0 +1,883 @@
+/* ========================================
+   REPORT DETAILS PAGE
+======================================== */
+
+.report-details-page {
+  min-height: 100vh;
+  padding: 38px 32px;
+  background: #f4f7fb;
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.report-details-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.report-details-header h1 {
+  margin: 0;
+
+  color: #172238;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.report-details-header p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   TOP SYNC BADGE
+======================================== */
+
+.top-sync-badge {
+  min-width: 110px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e7f7ed;
+  color: #16a34a;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   MAIN CARD
+======================================== */
+
+.report-details-page .details-card {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 43% 57%;
+
+  gap: 38px;
+
+  padding: 38px 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #d6dfeb;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   INCIDENT PHOTO
+======================================== */
+
+.report-details-page .incident-photo {
+  position: relative;
+
+  width: 100%;
+  height: 636px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #c7d1bd;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+.report-details-page .incident-photo span {
+  position: relative;
+  z-index: 3;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* PHOTO SHAPES */
+
+.report-details-page .photo-shape {
+  position: absolute;
+
+  background: #819079;
+
+  transform: rotate(35deg);
+}
+
+.report-details-page .shape-one {
+  width: 280px;
+  height: 170px;
+
+  left: -45px;
+  bottom: 115px;
+}
+
+.report-details-page .shape-two {
+  width: 330px;
+  height: 210px;
+
+  right: -75px;
+  bottom: 40px;
+
+  background: #71806b;
+}
+
+
+/* ========================================
+   INFORMATION SIDE
+======================================== */
+
+.report-details-page .details-information {
+  padding: 4px 20px 0 0;
+
+  box-sizing: border-box;
+}
+
+.report-details-page .details-information h2 {
+  margin: 0 0 32px;
+
+  color: #172238;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   DETAIL ITEM
+======================================== */
+
+.report-details-page .detail-item {
+  margin-bottom: 21px;
+}
+
+.report-details-page .detail-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+/* MAIN TEXT */
+
+.report-details-page .detail-item strong {
+  display: block;
+
+  color: #172238;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   SEVERITY
+======================================== */
+
+.report-details-page .detail-severity {
+  display: flex;
+
+  width: 86px;
+  height: 29px;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fdeaea;
+  color: #ef4444;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.report-details-page .detail-description {
+  max-width: 480px;
+
+  margin: 0;
+
+  color: #34445d;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   NORMAL VALUES
+======================================== */
+
+.report-details-page .detail-value {
+  color: #34445d;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   SYNC STATUS
+======================================== */
+
+.report-details-page .detail-sync-badge {
+  display: flex;
+
+  width: 86px;
+  height: 29px;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e7f7ed;
+  color: #16a34a;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .report-details-page {
+    padding: 28px 20px;
+  }
+
+  .report-details-page .details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .report-details-page .incident-photo {
+    height: 400px;
+  }
+
+  .report-details-page .details-information {
+    padding-right: 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .report-details-page {
+    padding: 22px 15px;
+  }
+
+  .report-details-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .report-details-page .incident-photo {
+    height: 300px;
+  }
+}
+/* ========================================
+   COLORFUL INCIDENT INFORMATION LABELS
+======================================== */
+
+.report-details-page .detail-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+  padding: 5px 10px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* Incident Type */
+
+.report-details-page .detail-item:nth-child(2) .detail-label {
+  color: #2563eb;
+  background: #eaf2ff;
+}
+
+
+/* Severity */
+
+.report-details-page .detail-item:nth-child(3) .detail-label {
+  color: #a39c10;
+  background: #eafdf3;
+}
+
+
+/* Description */
+
+.report-details-page .detail-item:nth-child(4) .detail-label {
+  color: #7c3aed;
+  background: #f1eafe;
+}
+
+
+/* Location */
+
+.report-details-page .detail-item:nth-child(5) .detail-label {
+  color: #0891b2;
+  background: #e6f8fb;
+}
+
+
+/* Coordinates */
+
+.report-details-page .detail-item:nth-child(6) .detail-label {
+  color: #0f766e;
+  background: #e6f7f4;
+}
+
+
+/* Client Timestamp */
+
+.report-details-page .detail-item:nth-child(7) .detail-label {
+  color: #d97706;
+  background: #fff4dc;
+}
+
+
+/* Synced At */
+
+.report-details-page .detail-item:nth-child(8) .detail-label {
+  color: #16a34a;
+  background: #e7f7ed;
+}
+
+
+/* Sync Status */
+
+.report-details-page .detail-item:nth-child(9) .detail-label {
+  color: #2563eb;
+  background: #eaf2ff;
+}
+/* HIGH - Normal Black Text */
+.report-details-page .detail-severity {
+  color: #172238;
+  font-weight: 400;
+}
+
+
+/* LOCATION - Normal Text */
+.report-details-page .detail-item:nth-child(5) strong {
+  font-weight: 400;
+}
+/* ========================================
+   INCIDENT INFORMATION - CLEAN LABELS
+======================================== */
+
+.report-details-page .detail-label {
+  display: block;
+
+  margin-bottom: 7px;
+  padding: 0;
+
+  background: transparent !important;
+
+  font-size: 11px !important;
+  font-weight: 600;
+
+  color: #64748b !important;
+
+  border-radius: 0;
+}
+
+/* ========================================
+   NER TEAL + GRAY THEME
+   ======================================== */
+:root {
+  --ner-teal: #0f8f8a;
+  --ner-teal-dark: #0b716e;
+  --ner-teal-soft: #e6f5f4;
+  --ner-charcoal: #273238;
+  --ner-gray-bg: #f1f4f5;
+  --ner-gray-border: #d5dde0;
+  --ner-text: #263238;
+  --ner-muted: #66757b;
+}
+
+/* Page surfaces */
+.dashboard,
+.live-map-page,
+.report-incident-page,
+.my-reports-page,
+.report-details-page,
+.alerts-page {
+  background: var(--ner-gray-bg) !important;
+  color: var(--ner-text);
+}
+
+/* Sidebar */
+.dashboard .sidebar {
+  background: var(--ner-charcoal) !important;
+}
+
+.dashboard .brand-logo,
+.dashboard .nav-item.active,
+.dashboard .online-badge {
+  background: var(--ner-teal) !important;
+}
+
+.dashboard .nav-item.active {
+  color: #fff !important;
+}
+
+.dashboard .nav-item:hover {
+  background: rgba(15,143,138,.16) !important;
+}
+
+/* Main headings */
+.page-heading h1,
+.live-map-header h1,
+.report-header h1,
+.my-reports-header h1,
+.report-details-header h1,
+.alerts-header h1 {
+  color: var(--ner-text) !important;
+}
+
+/* Cards */
+.info-card,
+.content-card,
+.district-card,
+.welcome-card,
+.reports-container,
+.report-card,
+.details-card,
+.alerts-container,
+.map-side-panel,
+.report-incident-page .report-card {
+  border-color: var(--ner-gray-border) !important;
+}
+
+/* Primary buttons / controls */
+.report-button,
+.submit-button,
+.report-incident-page .submit-button {
+  background: var(--ner-teal) !important;
+}
+
+.report-button:hover,
+.submit-button:hover,
+.report-incident-page .submit-button:hover {
+  background: var(--ner-teal-dark) !important;
+}
+
+/* Teal accents */
+.blue-text,
+.view-alerts,
+.report-tab.active,
+.geo-label,
+.top-sync-badge {
+  color: var(--ner-teal) !important;
+}
+
+.report-tab.active::after {
+  background: var(--ner-teal) !important;
+}
+
+/* Neutral text */
+.card-title,
+.section-subtitle,
+.my-reports-header p,
+.report-details-header p,
+.alerts-header p,
+.live-map-header p {
+  color: var(--ner-muted) !important;
+}
+
+/* Teal form focus */
+.report-incident-page input:focus,
+.report-incident-page select:focus,
+.report-incident-page textarea:focus {
+  outline: none;
+  border-color: var(--ner-teal) !important;
+  box-shadow: 0 0 0 3px rgba(15,143,138,.12) !important;
+}
+
+/* Teal photo/upload accents */
+.photo-upload,
+.upload-icon {
+  border-color: var(--ner-teal) !important;
+}
+
+/* Read-only status accents */
+.detail-sync-badge,
+.sync-success {
+  color: var(--ner-teal) !important;
+  background: var(--ner-teal-soft) !important;
+}
+
+/* Map / report neutral surfaces */
+.map-side-panel,
+.incident-map,
+.report-incident-page .incident-map,
+.incident-photo {
+  background-color: #e9edef !important;
+}
+
+/* Keep severity colors for clear High/Moderate/Low meaning */
+
+
+/* ========================================
+   REPORT DETAILS — POLISHED TEAL + GRAY
+   ======================================== */
+
+.report-details-page {
+  min-height: 100vh;
+  padding: 34px 34px 42px;
+  background: #f1f4f5 !important;
+  color: #263238;
+}
+
+.report-details-header {
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.report-details-header h1 {
+  font-size: 30px;
+  letter-spacing: -0.4px;
+  color: #263238 !important;
+}
+
+.report-details-header p {
+  margin-top: 6px;
+  color: #66757b !important;
+  font-size: 13px;
+}
+
+.top-sync-badge {
+  min-width: 98px;
+  height: 32px;
+  padding: 0 14px;
+  gap: 7px;
+  background: #e6f5f4 !important;
+  color: #0f8f8a !important;
+  border: 1px solid #b9dfdc;
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+.top-sync-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0f8f8a;
+  display: inline-block;
+}
+
+.report-details-page .details-card {
+  grid-template-columns: minmax(360px, 0.92fr) minmax(430px, 1.08fr);
+  gap: 42px;
+  padding: 28px;
+  background: #fff !important;
+  border: 1px solid #d5dde0 !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(38,50,56,.07);
+}
+
+.report-details-page .incident-photo {
+  height: 610px;
+  border-radius: 13px;
+  background:
+    linear-gradient(135deg, rgba(15,143,138,.10), rgba(39,50,56,.04)),
+    #e9edef !important;
+  border: 1px solid #d5dde0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
+}
+
+.report-details-page .incident-photo::before {
+  content: "FIELD INCIDENT";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: rgba(39,50,56,.78);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 4;
+}
+
+.report-details-page .incident-photo span {
+  color: #4d5b60;
+  font-size: 15px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+.report-details-page .photo-shape {
+  opacity: .42;
+  background: #8aa8a5;
+}
+.report-details-page .shape-two {
+  background: #6e8986;
+  opacity: .34;
+}
+
+.report-details-page .details-information {
+  padding: 2px 8px 0 2px;
+}
+
+.report-details-page .details-info-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e2e7e8;
+}
+
+.report-details-page .details-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #0f8f8a;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.report-details-page .details-information h2 {
+  margin: 0;
+  color: #263238 !important;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.report-details-page .read-only-pill {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border: 1px solid #d5dde0;
+  border-radius: 999px;
+  color: #66757b;
+  background: #f7f9f9;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.report-details-page .detail-item {
+  margin-bottom: 18px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0f1;
+}
+
+.report-details-page .detail-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.report-details-page .detail-label {
+  margin-bottom: 6px;
+  color: #718087 !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: .15px;
+  text-transform: uppercase;
+}
+
+.report-details-page .detail-item strong,
+.report-details-page .detail-value,
+.report-details-page .detail-description {
+  color: #263238 !important;
+  font-size: 13px;
+}
+
+.report-details-page .detail-item strong {
+  font-weight: 600;
+}
+
+.report-details-page .detail-description {
+  max-width: 620px;
+  line-height: 1.65;
+}
+
+.report-details-page .detail-severity {
+  width: auto;
+  min-width: 70px;
+  height: 28px;
+  padding: 0 11px;
+  display: inline-flex;
+  background: #f4f6f6;
+  border: 1px solid #d8dfe1;
+  color: #263238 !important;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600 !important;
+}
+
+.report-details-page .detail-sync-badge {
+  width: auto;
+  min-width: 72px;
+  height: 28px;
+  padding: 0 11px;
+  display: inline-flex;
+  background: #e6f5f4 !important;
+  border: 1px solid #b9dfdc;
+  color: #0f8f8a !important;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .report-details-page .details-card {
+    grid-template-columns: 1fr;
+  }
+  .report-details-page .incident-photo {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .report-details-page {
+    padding: 24px 16px 30px;
+  }
+  .report-details-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .report-details-page .details-card {
+    padding: 18px;
+    gap: 24px;
+  }
+  .report-details-page .incident-photo {
+    height: 300px;
+  }
+}
+/* ===== FINAL DESCRIPTION OVERFLOW FIX ===== */
+
+.report-details-page .details-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.report-details-page .details-information {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.report-details-page .detail-item {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.report-details-page .detail-description {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Prevent long text from expanding the grid */
+.report-details-page .details-card > * {
+  min-width: 0;
+}
+/* ===== DESCRIPTION BOX - FINAL FIX ===== */
+
+.report-details-page .detail-description {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+  padding: 12px 14px !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  line-height: 1.55 !important;
+}
+
+/* Description ke andar agar span/p/text hai */
+.report-details-page .detail-description * {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Right side column ko shrink hone allow karo */
+.report-details-page .details-information {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.report-details-page .detail-item {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Card columns */
+.report-details-page .details-card {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+  min-width: 0 !important;
+}
