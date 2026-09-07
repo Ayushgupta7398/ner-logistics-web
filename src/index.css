@@ -43,6 +43,7 @@ select {
 
   padding: 24px 14px;
 
+  /* sidebar color  */
   background-color: #0f1b2d;
   color: #ffffff;
 
@@ -127,7 +128,7 @@ select {
 
   color: #7f8da3;
 
-  font-size: 18px;
+  font-size: 17px;
 }
 
 

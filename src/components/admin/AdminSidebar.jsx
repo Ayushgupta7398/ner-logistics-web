@@ -29,7 +29,7 @@ function AdminSidebar({ collapsed }) {
 
       <div className="sidebar-footer">
         <span>◉</span>
-        <span>User Mode</span>
+        <span>User / Field Officer</span>
       </div>
 
     </aside>
