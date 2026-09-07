@@ -1,0 +1,441 @@
+* {
+  box-sizing: border-box;
+}
+
+.alerts-page {
+  min-height: 100vh;
+  background: #f5f8f6;
+  color: #17241e;
+  font-family: Inter, Arial, sans-serif;
+  padding-bottom: 35px;
+}
+
+
+/* HEADER */
+
+.alerts-header {
+  height: 68px;
+  background: white;
+  border-bottom: 1px solid #dfe7e2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 30px;
+}
+
+.alerts-back {
+  border: 0;
+  background: transparent;
+  color: #55635b;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.alerts-header h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.alerts-header p {
+  margin: 4px 0 0;
+  color: #8b9690;
+  font-size: 9px;
+}
+
+.live-indicator {
+  margin-left: auto;
+  color: #07984c;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.live-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #07984c;
+}
+
+
+/* CONTENT */
+
+.alerts-content {
+  width: min(850px, calc(100% - 50px));
+  margin: 22px auto;
+}
+
+
+/* FILTERS */
+
+.alert-filters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.filter-btn {
+  height: 38px;
+  border: 1px solid #dce5df;
+  border-radius: 7px;
+  background: white;
+  color: #69756e;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.filter-btn:hover {
+  border-color: #07984c;
+}
+
+.filter-btn.active {
+  background: #07984c;
+  border-color: #07984c;
+  color: white;
+}
+
+
+/* SUMMARY */
+
+.alerts-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.alerts-summary div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.alerts-summary strong {
+  font-size: 15px;
+}
+
+.alerts-summary span {
+  color: #7e8983;
+  font-size: 8px;
+}
+
+.updated-text {
+  font-size: 7px !important;
+}
+
+
+/* ALERT LIST */
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.alert-card {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 9px;
+  padding: 14px;
+  transition: .2s ease;
+}
+
+.alert-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(30, 60, 40, .08);
+}
+
+.alert-card.high {
+  border-left: 3px solid #e53935;
+}
+
+.alert-card.medium {
+  border-left: 3px solid #e3a51a;
+}
+
+.alert-card.low {
+  border-left: 3px solid #07984c;
+}
+
+
+/* MAIN ALERT */
+
+.alert-main {
+  display: flex;
+  gap: 12px;
+}
+
+.alert-icon-box {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f4f7f5;
+  font-size: 15px;
+}
+
+.alert-information {
+  flex: 1;
+}
+
+.alert-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.alert-title-row h2 {
+  margin: 0;
+  font-size: 10px;
+}
+
+.alert-location {
+  margin: 4px 0 0;
+  color: #4e5c54;
+  font-size: 8px;
+}
+
+.alert-description {
+  margin: 5px 0 0;
+  color: #8b9690;
+  font-size: 7px;
+}
+
+
+/* SEVERITY */
+
+.alert-severity {
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 7px;
+  font-weight: bold;
+}
+
+.alert-severity.high {
+  background: #fff0f0;
+  color: #e53935;
+}
+
+.alert-severity.medium {
+  background: #fff8e6;
+  color: #c78b08;
+}
+
+.alert-severity.low {
+  background: #eaf8ef;
+  color: #078c48;
+}
+
+
+/* FOOTER */
+
+.alert-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 9px;
+  border-top: 1px solid #edf1ee;
+}
+
+.alert-time {
+  color: #929c96;
+  font-size: 7px;
+}
+
+.details-btn {
+  border: 0;
+  background: transparent;
+  color: #078d47;
+  cursor: pointer;
+  font-size: 7px;
+  font-weight: bold;
+}
+
+
+/* EMPTY */
+
+.empty-alerts {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 9px;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.empty-alerts div {
+  margin: auto auto 10px;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf8ef;
+  color: #07984c;
+}
+
+.empty-alerts strong {
+  display: block;
+  font-size: 10px;
+}
+
+.empty-alerts p {
+  color: #89948e;
+  font-size: 8px;
+}
+
+
+/* VIEW ALL */
+
+.view-all-alerts {
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  border: 1px solid #07984c;
+  border-radius: 7px;
+  background: white;
+  color: #07984c;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.view-all-alerts:hover {
+  background: #07984c;
+  color: white;
+}
+
+
+/* AI INSIGHT */
+
+.alert-insight {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 14px;
+  border: 1px solid #d5eadc;
+  border-radius: 8px;
+  background: #f0f8f3;
+}
+
+.insight-symbol {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #dff2e5;
+  color: #07984c;
+}
+
+.alert-insight strong {
+  font-size: 9px;
+}
+
+.alert-insight p {
+  margin: 5px 0 0;
+  color: #657169;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .alerts-header {
+    height: 56px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .alerts-back {
+    font-size: 15px;
+  }
+
+  .alerts-header h1 {
+    font-size: 11px;
+  }
+
+  .alerts-header p {
+    font-size: 6px;
+  }
+
+  .live-indicator {
+    font-size: 6px;
+  }
+
+  .alerts-content {
+    width: calc(100% - 16px);
+    margin: 9px auto;
+  }
+
+  .alert-filters {
+    gap: 5px;
+  }
+
+  .filter-btn {
+    height: 34px;
+    font-size: 7px;
+  }
+
+  .alerts-summary strong {
+    font-size: 12px;
+  }
+
+  .alerts-summary span {
+    font-size: 7px;
+  }
+
+  .alert-card {
+    padding: 10px;
+  }
+
+  .alert-icon-box {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .alert-title-row h2 {
+    font-size: 8px;
+  }
+
+  .alert-location {
+    font-size: 7px;
+  }
+
+  .alert-description {
+    font-size: 6px;
+  }
+
+  .alert-severity {
+    padding: 3px 7px;
+    font-size: 6px;
+  }
+
+  .alert-footer {
+    margin-top: 9px;
+  }
+
+  .alert-time,
+  .details-btn {
+    font-size: 6px;
+  }
+
+  .alert-insight {
+    padding: 10px;
+  }
+
+  .alert-insight p {
+    font-size: 6px;
+  }
+}

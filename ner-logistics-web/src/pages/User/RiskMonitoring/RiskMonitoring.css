@@ -1,0 +1,598 @@
+* {
+  box-sizing: border-box;
+}
+
+.risk-page {
+  min-height: 100vh;
+  background: #f5f8f6;
+  color: #17241e;
+  font-family: Inter, Arial, sans-serif;
+  padding-bottom: 35px;
+}
+
+
+/* HEADER */
+
+.risk-header {
+  height: 68px;
+  background: white;
+  border-bottom: 1px solid #dfe7e2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 30px;
+}
+
+.risk-back {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #55635b;
+}
+
+.risk-header h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.risk-header p {
+  margin: 4px 0 0;
+  color: #89938e;
+  font-size: 9px;
+}
+
+.risk-status {
+  margin-left: auto;
+  color: #07984c;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+
+/* CONTENT */
+
+.risk-content {
+  width: min(900px, calc(100% - 50px));
+  margin: 20px auto;
+}
+
+
+/* TABS */
+
+.risk-tabs {
+  height: 40px;
+  background: white;
+  border: 1px solid #dce5df;
+  border-radius: 8px 8px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.risk-tabs button {
+  border: 0;
+  background: transparent;
+  color: #7d8882;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.risk-tabs button.active {
+  color: #078d47;
+  font-weight: bold;
+  border-bottom: 2px solid #07984c;
+}
+
+
+/* MAP */
+
+.risk-map-card {
+  background: white;
+  padding: 8px;
+  border: 1px solid #dce5df;
+  border-top: 0;
+}
+
+.risk-map {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #e7eee5;
+}
+
+.map-terrain {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 20%, #d6e3d2 21%, transparent 23%),
+    linear-gradient(40deg, transparent 30%, #d0dfcb 31%, transparent 33%),
+    linear-gradient(150deg, transparent 65%, #d9e5d5 66%, transparent 68%),
+    repeating-linear-gradient(
+      25deg,
+      #edf2e9 0px,
+      #edf2e9 16px,
+      #dfe8dc 17px,
+      #edf2e9 18px
+    );
+}
+
+
+/* ROADS */
+
+.risk-road {
+  position: absolute;
+  height: 6px;
+  border-radius: 10px;
+  transform-origin: left center;
+}
+
+.risk-road-1 {
+  width: 72%;
+  left: 8%;
+  top: 67%;
+  transform: rotate(-23deg);
+  background: #287ee8;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.7);
+}
+
+.risk-road-2 {
+  width: 60%;
+  left: 34%;
+  top: 42%;
+  transform: rotate(14deg);
+  background: #e54d43;
+}
+
+.risk-road-3 {
+  width: 45%;
+  left: 17%;
+  top: 28%;
+  transform: rotate(30deg);
+  background: #36a85c;
+}
+
+
+/* RISK ZONES */
+
+.risk-zone {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.zone-red {
+  width: 180px;
+  height: 100px;
+  left: 38%;
+  top: 30%;
+  background: rgba(239, 68, 68, .34);
+  transform: rotate(-18deg);
+}
+
+.zone-orange {
+  width: 250px;
+  height: 120px;
+  left: 29%;
+  top: 28%;
+  background: rgba(245, 158, 11, .25);
+  transform: rotate(12deg);
+}
+
+.zone-yellow {
+  width: 140px;
+  height: 80px;
+  left: 57%;
+  top: 23%;
+  background: rgba(250, 204, 21, .28);
+}
+
+
+/* MARKERS */
+
+.risk-marker {
+  position: absolute;
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 9px;
+  border: 3px solid white;
+  box-shadow: 0 2px 7px rgba(0,0,0,.25);
+}
+
+.red-marker {
+  background: #e53935;
+  left: 51%;
+  top: 52%;
+}
+
+.blue-marker {
+  background: #1976d2;
+  left: 43%;
+  top: 38%;
+}
+
+.yellow-marker {
+  background: #eab308;
+  left: 69%;
+  top: 20%;
+}
+
+.marker-two {
+  left: 66%;
+  top: 55%;
+}
+
+.map-place {
+  position: absolute;
+  z-index: 6;
+  background: rgba(255,255,255,.88);
+  padding: 4px 7px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.place-guwahati {
+  left: 15%;
+  top: 72%;
+}
+
+.place-shillong {
+  right: 13%;
+  top: 24%;
+}
+
+.place-nongpoh {
+  left: 45%;
+  top: 48%;
+}
+
+
+/* CONTROLS */
+
+.risk-map-controls {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+}
+
+.risk-map-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d8e0da;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.live-map-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 10;
+  background: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.live-map-badge span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a05a;
+  margin-right: 5px;
+}
+
+
+/* SECTION */
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 11px;
+}
+
+.section-heading span {
+  color: #929c96;
+  font-size: 7px;
+}
+
+
+/* RISK LEVELS */
+
+.risk-level-section {
+  margin-top: 18px;
+}
+
+.risk-level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.risk-level-card {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 8px;
+  padding: 13px;
+}
+
+.risk-level-title {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.risk-level-title span {
+  margin-right: 5px;
+}
+
+.risk-level-card strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.risk-level-card.high {
+  color: #df3939;
+}
+
+.risk-level-card.medium {
+  color: #d49b13;
+}
+
+.risk-level-card.low {
+  color: #07984c;
+}
+
+
+/* ACTIVE AREAS */
+
+.risk-areas {
+  margin-top: 18px;
+}
+
+.risk-area-list {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 8px;
+}
+
+.risk-area-card {
+  min-height: 57px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.risk-area-card:last-child {
+  border-bottom: 0;
+}
+
+.risk-area-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff1f1;
+  color: #e53935;
+  font-weight: bold;
+}
+
+.risk-area-info {
+  flex: 1;
+}
+
+.risk-area-info strong {
+  display: block;
+  font-size: 8px;
+}
+
+.risk-area-info span {
+  display: block;
+  margin-top: 3px;
+  color: #8b9690;
+  font-size: 7px;
+}
+
+.area-risk {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.area-risk.high {
+  color: #df3939;
+}
+
+.area-risk.medium {
+  color: #d49b13;
+}
+
+.area-risk.low {
+  color: #07984c;
+}
+
+
+/* AI INSIGHT */
+
+.risk-insight {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid #d5eadc;
+  border-radius: 8px;
+  background: #f0f8f3;
+}
+
+.insight-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #dff2e5;
+  color: #07984c;
+}
+
+.risk-insight strong {
+  font-size: 9px;
+}
+
+.risk-insight p {
+  margin: 5px 0 0;
+  color: #5c6962;
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+
+/* ACTIONS */
+
+.risk-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.primary-risk-button,
+.secondary-risk-button {
+  flex: 1;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.primary-risk-button {
+  border: 0;
+  background: #07984c;
+  color: white;
+}
+
+.secondary-risk-button {
+  border: 1px solid #07984c;
+  background: white;
+  color: #07984c;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .risk-header {
+    height: 56px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .risk-header h1 {
+    font-size: 11px;
+  }
+
+  .risk-header p {
+    font-size: 6px;
+  }
+
+  .risk-status {
+    font-size: 6px;
+  }
+
+  .risk-content {
+    width: calc(100% - 16px);
+    margin: 8px auto;
+  }
+
+  .risk-tabs {
+    height: 35px;
+  }
+
+  .risk-tabs button {
+    font-size: 7px;
+  }
+
+  .risk-map {
+    height: 250px;
+  }
+
+  .risk-level-section,
+  .risk-areas,
+  .risk-insight {
+    margin-top: 10px;
+  }
+
+  .risk-level-grid {
+    gap: 5px;
+  }
+
+  .risk-level-card {
+    padding: 9px;
+  }
+
+  .risk-level-title {
+    font-size: 6px;
+  }
+
+  .risk-level-card strong {
+    font-size: 9px;
+  }
+
+  .risk-area-card {
+    min-height: 50px;
+    padding: 8px;
+  }
+
+  .risk-area-info strong {
+    font-size: 7px;
+  }
+
+  .risk-area-info span {
+    font-size: 6px;
+  }
+
+  .area-risk {
+    font-size: 7px;
+  }
+
+  .risk-insight {
+    padding: 10px;
+  }
+
+  .risk-insight p {
+    font-size: 7px;
+  }
+
+  .primary-risk-button,
+  .secondary-risk-button {
+    height: 36px;
+    font-size: 7px;
+  }
+
+  .map-place {
+    font-size: 6px;
+  }
+}

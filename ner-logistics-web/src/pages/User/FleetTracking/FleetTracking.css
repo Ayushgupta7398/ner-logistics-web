@@ -1,0 +1,409 @@
+* {
+  box-sizing: border-box;
+}
+
+.fleet-page {
+  min-height: 100vh;
+  background: #f5f8f6;
+  color: #18251f;
+  font-family: Inter, Arial, sans-serif;
+}
+
+
+/* HEADER */
+
+.fleet-header {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid #dfe7e2;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  gap: 15px;
+}
+
+.fleet-back,
+.fleet-expand {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.fleet-back {
+  font-size: 19px;
+  color: #53605a;
+}
+
+.fleet-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-title strong {
+  font-size: 14px;
+}
+
+.fleet-title span {
+  margin-top: 3px;
+  font-size: 8px;
+  color: #8a948f;
+}
+
+.fleet-expand {
+  margin-left: auto;
+  font-size: 17px;
+}
+
+
+/* TABS */
+
+.fleet-tabs {
+  width: min(1100px, calc(100% - 50px));
+  margin: 15px auto 0;
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 8px;
+  display: flex;
+  padding: 3px;
+}
+
+.fleet-tab {
+  flex: 1;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: #747e79;
+  font-size: 9px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fleet-tab.active {
+  background: #edf7f1;
+  color: #07984c;
+  font-weight: bold;
+}
+
+
+/* MAP */
+
+.fleet-map {
+  width: min(1100px, calc(100% - 50px));
+  height: 520px;
+  margin: 12px auto 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #d9e3dd;
+  background:
+    linear-gradient(120deg, #edf3ef, #e5eee8);
+}
+
+.fleet-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-road {
+  fill: none;
+  stroke: #cbd8d0;
+  stroke-width: 4;
+}
+
+.fleet-route {
+  fill: none;
+  stroke: #c0cbc4;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.route-blue {
+  fill: none;
+  stroke: #1976d2;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.route-green {
+  fill: none;
+  stroke: #16a05a;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.vehicle-ring {
+  fill: #1976d2;
+  opacity: .18;
+}
+
+.vehicle-ring-red {
+  fill: #e5483e;
+  opacity: .18;
+}
+
+.vehicle-ring-green {
+  fill: #16a05a;
+  opacity: .18;
+}
+
+.vehicle-blue,
+.vehicle-red,
+.vehicle-green {
+  stroke: white;
+  stroke-width: 3;
+}
+
+.vehicle-blue {
+  fill: #1976d2;
+}
+
+.vehicle-red {
+  fill: #e5483e;
+}
+
+.vehicle-green {
+  fill: #16a05a;
+}
+
+.vehicle-icon {
+  font-size: 10px;
+}
+
+.destination {
+  fill: #e54a3e;
+  stroke: white;
+  stroke-width: 4;
+}
+
+.destination-text {
+  fill: white;
+  font-size: 9px;
+}
+
+.fleet-map-label {
+  position: absolute;
+  z-index: 4;
+  top: 13px;
+  left: 13px;
+  background: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  font-size: 7px;
+  font-weight: bold;
+  color: #07984c;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #0aa153;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.fleet-map-controls {
+  position: absolute;
+  z-index: 5;
+  right: 13px;
+  top: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fleet-map-controls button {
+  width: 31px;
+  height: 31px;
+  border: 1px solid #dbe4de;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 7px rgba(0,0,0,.08);
+}
+
+
+/* VEHICLE LIST */
+
+.fleet-list {
+  width: min(700px, calc(100% - 50px));
+  margin: 16px auto 45px;
+  background: white;
+  border: 1px solid #dce5df;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.fleet-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.fleet-list-header strong {
+  font-size: 10px;
+}
+
+.fleet-list-header span {
+  font-size: 7px;
+  color: #89948e;
+}
+
+
+/* VEHICLE CARD */
+
+.vehicle-card {
+  min-height: 60px;
+  border: 1px solid #e3eae5;
+  border-radius: 7px;
+  margin-bottom: 7px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vehicle-status-icon {
+  width: 31px;
+  height: 31px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+.vehicle-status-icon.green {
+  background: #e8f7ed;
+}
+
+.vehicle-status-icon.red {
+  background: #fff0ef;
+}
+
+.vehicle-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-details strong {
+  font-size: 8px;
+}
+
+.vehicle-details span {
+  margin-top: 4px;
+  color: #7b8680;
+  font-size: 7px;
+}
+
+.vehicle-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.vehicle-state strong {
+  font-size: 7px;
+}
+
+.vehicle-state span {
+  margin-top: 4px;
+  font-size: 7px;
+  color: #7b8680;
+}
+
+.state-green {
+  color: #07984c;
+}
+
+.state-red {
+  color: #e24b42;
+}
+
+
+/* VIEW ALL */
+
+.all-vehicles {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #087dc1;
+  padding: 11px;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .fleet-header {
+    height: 55px;
+    padding: 0 12px;
+  }
+
+  .fleet-title strong {
+    font-size: 10px;
+  }
+
+  .fleet-title span {
+    font-size: 6px;
+  }
+
+  .fleet-tabs {
+    width: calc(100% - 16px);
+    margin-top: 8px;
+  }
+
+  .fleet-map {
+    width: calc(100% - 16px);
+    height: 390px;
+    margin-top: 8px;
+    border-radius: 7px;
+  }
+
+  .fleet-list {
+    width: calc(100% - 16px);
+    margin-top: 10px;
+    padding: 9px;
+  }
+
+  .vehicle-card {
+    min-height: 55px;
+  }
+
+  .vehicle-details strong {
+    font-size: 7px;
+  }
+
+  .vehicle-details span {
+    font-size: 6px;
+  }
+
+  .vehicle-state strong,
+  .vehicle-state span {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .fleet-map {
+    height: 350px;
+  }
+
+  .fleet-list-header strong {
+    font-size: 8px;
+  }
+
+  .fleet-map-controls button {
+    width: 28px;
+    height: 28px;
+  }
+}

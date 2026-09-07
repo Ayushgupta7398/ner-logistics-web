@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+}
+
+.accessibility-page {
+  min-height: 100vh;
+  background: #f5f8f6;
+  color: #18251f;
+  font-family: Inter, Arial, sans-serif;
+  padding-bottom: 40px;
+}
+
+
+/* HEADER */
+
+.accessibility-header {
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #dfe7e2;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 30px;
+}
+
+.accessibility-back {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #53605a;
+}
+
+.accessibility-header h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.accessibility-header p {
+  margin: 4px 0 0;
+  font-size: 9px;
+  color: #89938e;
+}
+
+.accessibility-live {
+  margin-left: auto;
+  color: #07984c;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+
+/* MAIN */
+
+.accessibility-content {
+  width: min(850px, calc(100% - 50px));
+  margin: 20px auto;
+}
+
+
+/* SCORE */
+
+.access-score-card {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.03);
+}
+
+.score-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.small-label {
+  display: block;
+  font-size: 9px;
+  color: #707b75;
+  margin-bottom: 7px;
+}
+
+.score-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #17241e;
+}
+
+.score-number span {
+  font-size: 13px;
+  color: #8b9690;
+  font-weight: 500;
+}
+
+.score-status {
+  display: block;
+  margin-top: 2px;
+  color: #07984c;
+  font-size: 8px;
+}
+
+.info-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #dfe7e2;
+  background: white;
+  color: #65716b;
+  cursor: pointer;
+}
+
+.score-bar {
+  height: 8px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background: #e8eee9;
+  overflow: hidden;
+}
+
+.score-progress {
+  width: 87%;
+  height: 100%;
+  background: #16a05a;
+  border-radius: 10px;
+}
+
+.score-scale {
+  display: flex;
+  justify-content: space-between;
+  color: #a0aaa5;
+  font-size: 7px;
+  margin-top: 5px;
+}
+
+
+/* FEATURES */
+
+.features-section {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 11px;
+}
+
+.section-title p {
+  margin: 4px 0 12px;
+  color: #89938e;
+  font-size: 7px;
+}
+
+.features-list {
+  border-top: 1px solid #edf1ee;
+}
+
+.feature-row {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #edf1ee;
+  gap: 10px;
+}
+
+.feature-icon {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  background: #f0f6f2;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.feature-name {
+  flex: 1;
+  font-size: 8px;
+}
+
+.feature-status {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.feature-status.good {
+  color: #07984c;
+}
+
+.feature-status.moderate {
+  color: #d69d19;
+}
+
+
+/* RECOMMENDATIONS */
+
+.recommendation-card {
+  margin-top: 15px;
+  background: #f0f8f3;
+  border: 1px solid #d5eadc;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.recommendation-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.recommendation-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: #dff2e5;
+  color: #07984c;
+}
+
+.recommendation-title h2 {
+  margin: 0;
+  font-size: 10px;
+}
+
+.recommendation-title p {
+  margin: 3px 0 0;
+  color: #829087;
+  font-size: 7px;
+}
+
+.recommendation-text {
+  margin: 13px 0;
+  font-size: 8px;
+  line-height: 1.6;
+  color: #45524b;
+}
+
+.recommendation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.recommendation-tags span {
+  padding: 6px 8px;
+  background: white;
+  border: 1px solid #dce9e0;
+  border-radius: 5px;
+  color: #52705d;
+  font-size: 7px;
+}
+
+
+/* ROUTE SUMMARY */
+
+.route-summary {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.route-summary div {
+  background: white;
+  border: 1px solid #dfe7e2;
+  border-radius: 8px;
+  padding: 13px;
+}
+
+.route-summary span {
+  display: block;
+  font-size: 7px;
+  color: #89938e;
+  margin-bottom: 6px;
+}
+
+.route-summary strong {
+  font-size: 9px;
+}
+
+.low-risk {
+  color: #07984c;
+}
+
+
+/* ACTIONS */
+
+.accessibility-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.primary-access-button,
+.secondary-access-button {
+  flex: 1;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.primary-access-button {
+  border: 0;
+  background: #07984c;
+  color: white;
+}
+
+.primary-access-button:hover {
+  background: #057d3e;
+}
+
+.secondary-access-button {
+  border: 1px solid #07984c;
+  background: white;
+  color: #07984c;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .accessibility-header {
+    height: 55px;
+    padding: 0 12px;
+    gap: 9px;
+  }
+
+  .accessibility-header h1 {
+    font-size: 11px;
+  }
+
+  .accessibility-header p {
+    font-size: 6px;
+  }
+
+  .accessibility-live {
+    font-size: 6px;
+  }
+
+  .accessibility-content {
+    width: calc(100% - 16px);
+    margin: 8px auto;
+  }
+
+  .access-score-card {
+    padding: 13px;
+  }
+
+  .score-number {
+    font-size: 23px;
+  }
+
+  .features-section {
+    padding: 12px;
+    margin-top: 9px;
+  }
+
+  .feature-row {
+    min-height: 46px;
+  }
+
+  .feature-name {
+    font-size: 7px;
+  }
+
+  .feature-status {
+    font-size: 7px;
+  }
+
+  .recommendation-card {
+    margin-top: 9px;
+    padding: 12px;
+  }
+
+  .recommendation-text {
+    font-size: 7px;
+  }
+
+  .route-summary {
+    margin-top: 9px;
+    gap: 5px;
+  }
+
+  .route-summary div {
+    padding: 9px;
+  }
+
+  .route-summary span {
+    font-size: 6px;
+  }
+
+  .route-summary strong {
+    font-size: 7px;
+  }
+
+  .accessibility-actions {
+    margin-top: 9px;
+  }
+
+  .primary-access-button,
+  .secondary-access-button {
+    height: 36px;
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .recommendation-tags span {
+    font-size: 6px;
+  }
+
+  .feature-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+  }
+}
