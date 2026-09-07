@@ -1298,31 +1298,6 @@ Current structure:
       │
       └── feature/field-officer
 
-## Main Branch
-
-The `main` branch should remain stable.
-
-Developers should normally avoid directly pushing feature work to `main`.
-
-## Admin Developer
-
-Admin development happens on:
-
-    feature/admin
-
-## User Developer
-
-User development happens on:
-
-    feature/user
-
-## Field Officer Developer
-
-Field Officer development happens on:
-
-    feature/field-officer
-
----
 
 
 
@@ -1349,38 +1324,6 @@ Feature-specific files should therefore remain separated whenever possible.
 
 ---
 
-# 👨‍💻 Development Ownership
-
-## Admin Developer
-
-Primary responsibility:
-
-    pages/admin/
-    layouts/AdminLayout.jsx
-    components/admin/
-    Admin-related charts
-    Admin-related maps
-    Admin-related alerts
-
-## User Developer
-
-Primary responsibility:
-
-    pages/user/
-    layouts/UserLayout.jsx
-    components/user/
-
-## Field Officer Developer
-
-Primary responsibility:
-
-    pages/field-officer/
-    layouts/FieldOfficerLayout.jsx
-    components/field-officer/
-
-Shared components should be discussed before major changes.
-
----
 
 # 🛠️ Development Environment
 
@@ -1450,27 +1393,7 @@ The exact APIs will be implemented after the backend team finalizes the contract
 
 ---
 
-# 📊 MVP Priorities
 
-The initial MVP focuses on:
-
-1. Admin Dashboard
-2. Admin Live Monitoring
-3. Admin Traffic Analytics
-4. Admin Risk Monitoring
-5. Admin Accessibility
-6. Admin Alert Management
-7. Admin Reports
-8. Normal User Web
-9. Field Officer Web
-10. Route Planning
-11. Maps
-12. Alerts
-13. Incident Reporting
-14. Offline Sync
-15. Backend API Integration
-
----
 
 # 🔒 Frontend Boundaries
 
