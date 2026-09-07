@@ -11,6 +11,12 @@ function AdminLayout() {
 
       <AdminSidebar collapsed={collapsed} />
 
+      {/* Dims the content behind the sidebar on tablet/mobile when open.
+          CSS only shows this via a media query, so it's harmless on desktop. */}
+      {!collapsed && (
+        <div className="sidebar-overlay active" onClick={() => setCollapsed(true)}></div>
+      )}
+
       <main className={`admin-main ${collapsed ? "sidebar-collapsed" : ""}`}>
         <AdminHeader onToggleSidebar={() => setCollapsed(!collapsed)} />
         <Outlet />
